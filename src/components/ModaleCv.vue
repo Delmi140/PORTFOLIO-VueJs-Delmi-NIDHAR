@@ -2,13 +2,16 @@
     <div class="bloc-modale-cv" v-if="revelecv">
         <div class="overlay-cv" v-on:click="toogleModalecv"></div>
         <div class="modal-cv">
-            <button class="close-modal-cv modal-trigger-cv" v-on:click="toogleModalecv">X</button>
-            <h2 class="h2-modal-cv">CV en ligne de Delmi NIDHAR</h2>
-            <p class="p-image-cv-en-ligne"><img  class="image-cv-en-ligne-modal" src="./Images/ImageCVenLigneDelmiNIDHAR.jpg" alt="image-cv-modal"></p>
-            <p class="p-date-modal-cv">Date de creation :21/02/2024</p>
-            <p class="p-tech-modal-cv">Technologies utilisées : HTLM et CSS</p>
-            <p class="p-liensite-modal-cv"><router-link to='/Cvenligne' target="_blank">Lien</router-link> vers le site</p>
-            <p class="p-liengit-modal-cv"><a href="https://github.com/Delmi140/Depot-test-formation" target="_blank">Lien</a> vers le repository GitHub</p>
+            <button class="close-modal-cv" v-on:click="toogleModalecv">X</button>
+            <h2 class="h2-modal-cv">{{titre}}</h2>
+            <p class="p-image-cv-en-ligne"><img class="image-cv-en-ligne-modal" :src="imagecv" alt="image"></p>
+            <p class="p-date-modal-cv">{{date}}</p>
+            <p class="p-tech-modal-cv">{{technologies}}</p>
+            <p class="p-liensite-modal-cv"><router-link to='/Cvenligne' target="_blank">{{ liensitecv }} </router-link> {{ textsitecv }}</p>
+            <p class="p-liensite-modal-cv"><router-link to='/NotFound' target="_blank">{{ liensitedec }} </router-link> {{ textsitedec }}</p>
+            <p class="p-liengit-modal-cv"><a :href="liengitnet" target="_blank">{{ LienGit }}</a> {{textlien}}</p>
+            
+            
         </div>
 
 
@@ -20,10 +23,13 @@
 
 export default {
     name:'ModaleCv',
-    props:['revelecv', 'toogleModalecv']
+    props:['revelecv', 'toogleModalecv', 'titre', 'date', 'technologies','liensitecv','textsitecv','liensitedec','textsitedec','imagecv','liengitnet','LienGit','textlien', ]
+    
+    
 }
 
 </script>
+
 
 
 <style>
@@ -31,6 +37,7 @@ export default {
 .image-cv-en-ligne-modal{
     height: 250px;
     width: 200px;
+    
 }
 
 .bloc-modale-cv{

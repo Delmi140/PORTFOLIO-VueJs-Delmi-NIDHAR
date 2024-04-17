@@ -1,9 +1,9 @@
 <template>
 
 
-    <modalecv v-bind:revelecv="revelecv" v-bind:toogleModalecv="toogleModalecv"></modalecv>
-    <modaleCc v-bind:revelecc="revelecc" v-bind:toogleModalecc="toogleModalecc"></modaleCc>
-    <modaleDec v-bind:reveledec="reveledec" v-bind:toogleModaledec="toogleModaledec"></modaleDec>
+    <modalecv v-bind:revelecv="revelecv" v-bind:toogleModalecv="toogleModalecv" :titre="titre1" :date="date1" :technologies="technologies1" :liensitecv="liensitecv" :textsitecv="textsitecv" :imagecv="imagecv1" :LienGit="LienGit1" :liengitnet="liengitnet1" :textlien="textlien1" ></modalecv>
+    <modalecv v-bind:revelecv="revelecc" v-bind:toogleModalecv="toogleModalecc" :titre="titre2" :date="date2" :technologies="technologies2"  :imagecv="imagecv2" :LienGit="LienGit3" :textlien="textlien3" :liengitnet="liengitnet3"></modalecv>
+    <modalecv v-bind:revelecv="reveledec" v-bind:toogleModalecv="toogleModaledec" :titre="titre3" :date="date3" :technologies="technologies3" :liensitedec="liensitedec" :textsitedec="textsitedec" :imagecv="imagecv3" :LienGit="LienGit2" :liengitnet="liengitnet2" :textlien="textlien2"></modalecv>
 
     <header id="header-portfolio">
         <a href="#"><img class="image-header" src="../components/Images/Image-header.png" alt="image-header-delmi-nidhar"></a>
@@ -149,9 +149,6 @@
 
 import ModaleCv from '@/components/ModaleCv.vue';
 
-import ModaleCc from '@/components/ModaleCc.vue';
-
-import ModaleDec from '@/components/ModaleDec.vue'
 
 export default {
     name:'portfolio',
@@ -159,14 +156,39 @@ export default {
         return{
             revelecv: false,
             revelecc: false,
-            reveledec:false
+            reveledec:false,
+            titre1 :"CV en ligne de Delmi NIDHAR",
+            titre2 :"Cahier des charges de la socketterie",
+            titre3 :"Dynamiser Un Espace De Commentaires",
+            date1 :"Date de creation :07/01/2024",
+            date2 :"Date de creation :10/02/2024",
+            date3 :"Date de creation :21/02/2024",
+            technologies1 :"Technologies utilisées : HTLM et CSS",
+            technologies2 :"Technologies utilisées : WORD et PDF",
+            technologies3 :"Technologies utilisées : HTML et JS",
+            liensitecv: "Lien",
+            textsitecv: "vers le site",
+            liensitedec: "Lien",
+            textsitedec: "vers le site",
+            imagecv1: "src/components/Images/ImageCVenLigneDelmiNIDHAR.jpg",
+            imagecv2: "src/components/Images/CAHIER-DES-CHARGES-LA-SOCKETTERIE.jpg",
+            imagecv3: "src/components/Images/Dynamiser-Un-Espace-De-Commentaires.png",
+            LienGit1: "Lien",
+            liengitnet1: "https://github.com/Delmi140/Depot-test-formation",
+            textlien1: "vers le repository GitHub",
+            LienGit2: "Lien",
+            liengitnet2: "https://github.com/Delmi140/Depot-DynamiserUnEspaceDeCommentaires",
+            textlien2: "vers le repository GitHub",
+            LienGit3: "Lien",
+            liengitnet3: "src/components/Images/CAHIER-DES-CHARGES-Delmi-Nidhar.pdf",
+            textlien3: "vers le ficher PDF",
+
+
         }
     },
     components: {
         'modalecv': ModaleCv,
-        'modaleCc': ModaleCc,
-        'modaleDec':ModaleDec
-
+        
     },
     methods:{
         toogleModalecv: function(){
@@ -184,8 +206,6 @@ export default {
 
     
 }
-
-
 
 </script>
 
